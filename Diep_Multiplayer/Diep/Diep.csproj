@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59232616-0176-4555-827D-2708FD7CC69E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Diep</RootNamespace>
+    <AssemblyName>Diep</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameConnection\DiepConnection.cs" />
+    <Compile Include="GameConnection\Messages\ConnectMessage.cs" />
+    <Compile Include="GameConnection\Messages\Message.cs" />
+    <Compile Include="GameConnection\Messages\MessageType.cs" />
+    <Compile Include="GameConnection\Messages\TankMoveMessage.cs" />
+    <Compile Include="GameConnection\Messages\ShootMessage.cs" />
+    <Compile Include="GameConnection\Messages\ShootMoveMessage.cs" />
+    <Compile Include="GameConnection\Messages\ShootSpawnMessage.cs" />
+    <Compile Include="GameConnection\Messages\ShootSupportType.cs" />
+    <Compile Include="GameConnection\Messages\TankSpawnMessage.cs" />
+    <Compile Include="GameConnection\MessageTranslator.cs" />
+    <Compile Include="GameEngine\Controls\Control.cs" />
+    <Compile Include="GameEngine\Controls\FlatButton.cs" />
+    <Compile Include="GameEngine\Controls\Label.cs" />
+    <Compile Include="GameEngine\Controls\TextBox.cs" />
+    <Compile Include="GameEngine\MainController.cs" />
+    <Compile Include="GameEngine\Scenario\Blocks\Circle.cs" />
+    <Compile Include="GameEngine\Scenario\Blocks\Square.cs" />
+    <Compile Include="GameEngine\Scenario\Blocks\Triangle.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\AutoCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\Cannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\DeployerCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\DeployerSubCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\DroneCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\RocketeerCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\RocketeerSubCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\SupportedCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Cannons\TrapperCannon.cs" />
+    <Compile Include="GameEngine\Scenario\Maps\Map.cs" />
+    <Compile Include="GameEngine\Scenario\MovableBlocks\Stroller.cs" />
+    <Compile Include="GameEngine\Scenario\MovableBlocks\Tracker.cs" />
+    <Compile Include="GameEngine\Scenario\Screens\PlayScreen.cs" />
+    <Compile Include="GameEngine\Scenario\Screens\StartScreen.cs" />
+    <Compile Include="GameEngine\Scenario\Shields\Shield.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\Destroyer.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\DestroyerBullet.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\Drone.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\Rocketeer.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\RocketeerBullet.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\Shoot.cs" />
+    <Compile Include="GameEngine\Scenario\Shoots\Trap.cs" />
+    <Compile Include="GameEngine\Scenario\Skills Manager\SkillsKeyMap.cs" />
+    <Compile Include="GameEngine\Scenario\Skills Manager\SkillsManager.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Annihilator.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\AutoTrapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Battleship.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Hybrid.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Rocketeer.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Skimmer.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Spike.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Landmine.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\AutoSmasher.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Smasher.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Overlord.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Overseer.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Stalker.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Streamliner.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Ranger.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Hunter.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Auto5.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Auto3.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Booster.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Destroyer.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Fighter.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\FlankGuard.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\AutoGunner.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Gunner.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\MachineGun.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\OctoTank.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\PentaShot.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\QuadTank.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Assassin.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Sniper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Sprayer.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\SpreadShot.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Tank.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\GunnerTrapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\MegaTrapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Overtrapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\TriTrapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Trapper.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\TriAngle.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\TripleShoot.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Triplet.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\TripleTwin.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\Twin.cs" />
+    <Compile Include="GameEngine\Scenario\Tanks\TwinFlank.cs" />
+    <Compile Include="GameEngine\Shared\GraphicsSupplier.cs" />
+    <Compile Include="GameEngine\Shared\Extensions.cs" />
+    <Compile Include="GameEngine\Shared\GameScreen.cs" />
+    <Compile Include="GameEngine\Shared\Shape.cs" />
+    <Compile Include="GameEngine\Shared\IToolSupport.cs" />
+    <Compile Include="GameEngine\Shared\IGameObject.cs" />
+    <Compile Include="GameEngine\Shared\IMovable.cs" />
+    <Compile Include="GameEngine\Shared\IShootable.cs" />
+    <Compile Include="GameEngine\Shared\ITouchable.cs" />
+    <Compile Include="GameEngine\Shared\MessageFilter.cs" />
+    <Compile Include="GameEngine\Shared\TeamColor.cs" />
+    <Compile Include="GameEngine\Shared\Vector2D.cs" />
+    <Compile Include="GameUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameUI.Designer.cs">
+      <DependentUpon>GameUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameEngine\Shared\IDrawable.cs" />
+    <Compile Include="GameEngine\Shared\GameController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameUI.resx">
+      <DependentUpon>GameUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
